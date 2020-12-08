@@ -1,9 +1,3 @@
 <% @users.each do |user| %>
-  <%= form_with(model: @friendship, local: true) do |f| %>
-  <%= user.name%>
-    <%= f.hidden_field :current_user, value: current_user.id %>
-    <%= f.hidden_field :friend_id, value: user.id %>
-    <%= f.hidden_field :confirmed, value: false %>
-    <%= f.submit 'Add friend' %>
-  <% end %>
+  
 <% end%>

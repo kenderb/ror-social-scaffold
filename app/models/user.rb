@@ -25,7 +25,7 @@ class User < ApplicationRecord
 
   # Users who have requested to be friends
   def friend_requests
-    inverse_friendships.map{|friendship| friendship.user if !friendship.confirmed}.compact
+    inverse_friendships.map{|friendship| friendship.user if !friendship.confirmed}.compact.uniq
   end
 
   def confirm_friend(user)

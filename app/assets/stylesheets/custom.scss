@@ -311,6 +311,13 @@ form {
   }
 }
 
+.add-friend {
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  background: $primary-color-dark;
+  color: white;
+  margin: 2rem;
+}
 #error_explanation {
   h2 {
     color: $primary-color-text;
