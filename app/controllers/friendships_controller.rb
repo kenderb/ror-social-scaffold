@@ -1,6 +1,6 @@
 class FriendshipsController < ApplicationController
   def index
-    @users = User.all
+    @friendship = Friendship.all
   end
   
 
@@ -8,19 +8,31 @@ class FriendshipsController < ApplicationController
     @friendship = Friendship.new
   end
 
-def create
-  @friendship = Friendship.create(friendship_params)
-  if @friendship.save
-    flash[:success] = "Friendship successfully created"
-    redirect_to  users_path
-  else
-    flash[:error] = "Something went wrong"
-    render 'new'
+  def create
+    @friendship = Friendship.create(friendship_params)
+    if @friendship.save
+      flash[:success] = "Friendship successfully created"
+      redirect_to  users_path
+    else
+      flash[:error] = "Something went wrong"
+      render 'new'
+    end
   end
-end
+
+  def edit
+  end
+  
+  def update
+    friend = Friendship.find(params[:friend_id])
+    current_user.confirm_friend(friend)
+    redirect_to root_url
+  end
+  
 
   def destroy
-  end
+    # @friendship = Friendship.find(params[:friendship_id])
+    # @friendship.destroy
+  end  
 
   private
   def friendship_params

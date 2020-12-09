@@ -16,11 +16,11 @@ module ApplicationHelper
     end
   end
 
-  def friend_status(user)
-    return if user == current_user
-    link_to 'Add Friend',
-            friendships_path(friendship: { user_id: current_user, friend_id: user.id, confirmed: false }),
-            method: :post, class: 'add-friend '
+  # def friend_status(user)
+  #   return if user == current_user
+  #   link_to 'Add Friend',
+  #           friendships_path(friendship: { user_id: current_user, friend_id: user.id, confirmed: false }),
+  #           method: :post, class: 'add-friend '
     
-  end
+  # end
 end

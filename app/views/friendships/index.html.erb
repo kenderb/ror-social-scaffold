@@ -1,3 +1,6 @@
-<% @users.each do |user| %>
-  
-<% end%>
+<h1> friend requests</h1>
+<% current_user.friend_requests.each do |request| %>
+<%= link_to 'Accept', friendship_request_path(request.id) %>
+<%#= linkt_to 'Decline'%>
+  <%= request.name%></br>
+<% end %>
