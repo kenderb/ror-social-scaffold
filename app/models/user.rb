@@ -38,6 +38,7 @@ class User < ApplicationRecord
     end
 
     received_invitation2 = user.pending_friendships.where(user_id: id).first
+    return if received_invitation2.nil?
     received_invitation2.confirmed = true
     if received_invitation2.valid?
       received_invitation2.save

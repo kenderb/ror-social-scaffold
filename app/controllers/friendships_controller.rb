@@ -1,11 +1,5 @@
 class FriendshipsController < ApplicationController
   def index
-    @friendship = Friendship.all
-  end
-  
-
-  def new
-    @friendship = Friendship.new
   end
 
   def create
@@ -19,19 +13,18 @@ class FriendshipsController < ApplicationController
     end
   end
 
-  def edit
-  end
-  
   def update
-    friend = Friendship.find(params[:friend_id])
+    friend = User.find(params[:id])
+    
     current_user.confirm_friend(friend)
-    redirect_to root_url
+    redirect_to friendships_path
   end
   
 
   def destroy
-    # @friendship = Friendship.find(params[:friendship_id])
-    # @friendship.destroy
+    friendship = Friendship.where(user_id: params[:id], friend_id: current_user.id, confirmed: false )
+    friendship[0].destroy
+    redirect_to friendships_path
   end  
 
   private
