@@ -1,4 +1,6 @@
 class FriendshipsController < ApplicationController
+  before_action :find_friendship, only: [:destroy, :update]
+
   def index
   end
 
@@ -14,20 +16,23 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-    friend = User.find(params[:id])
-    
+    friend = User.find(@friendship.user_id)
     current_user.confirm_friend(friend)
     redirect_to friendships_path
   end
   
 
   def destroy
-    friendship = Friendship.where(user_id: params[:id], friend_id: current_user.id, confirmed: false )
-    friendship[0].destroy
+    @friendship.destroy
     redirect_to friendships_path
   end  
 
   private
+
+  def find_friendship
+    @friendship = Friendship.find(params[:id])
+  end
+
   def friendship_params
     params.require(:friendship).permit(:user_id, :friend_id, :confirmed)
   end
