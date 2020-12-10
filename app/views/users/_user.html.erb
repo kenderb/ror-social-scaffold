@@ -2,12 +2,6 @@
   Name: <%= user.name %>
   <span class="profile-link">
     <%= link_to 'See Profile',  user_path(user), class: 'profile-link' %>
-  </span>
-  <%= form_with scope: :friendship, url:friendships_path do |form| %>
-    <%= form.hidden_field :user_id, value: current_user.id %>
-    <%= form.hidden_field :friend_id, value: user.id %>
-    <%= form.hidden_field :confirmed, value: false %>
-    <%= form.submit "Add Friend"%>
-  <% end %>
-  <%# friend_status(user)  %>
+  </span> 
+  <%= friend_status(user)  %>
 </li>
