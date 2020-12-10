@@ -1,6 +1,6 @@
-<%= form_with (model: @friendship, url: friendships_path) do |form| %>
+<%= form_with scope: :friendship, url:friendships_path do |form| %>
     <%= form.hidden_field :user_id, value: current_user.id %>
     <%= form.hidden_field :friend_id, value: user.id %>
     <%= form.hidden_field :confirmed, value: false %>
-    <%= button_to "Add this one", { action: "new", controller:"friendships" }%>
-  <% end %>
+    <%= form.submit "Add Friend"%>
+<% end %>

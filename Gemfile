@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
@@ -43,12 +43,15 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'hirb', '~> 0.7.3'
-  gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
-  gem 'capybara', '~> 3.34'
+  gem "database_cleaner"
+  gem 'rspec-rails'
 end
 
 group :test do
   gem 'shoulda-matchers', '~> 4.0'
+  gem "capybara"
+  gem 'webdrivers'
+  gem "selenium-webdriver"
 end
 
 group :development do
