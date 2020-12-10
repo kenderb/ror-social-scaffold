@@ -1,6 +1,9 @@
-example_id                        | status | run_time        |
---------------------------------- | ------ | --------------- |
-./spec/models/user_spec.rb[1:1:1] | passed | 0.0063 seconds  |
-./spec/models/user_spec.rb[1:1:2] | passed | 0.11673 seconds |
-./spec/models/user_spec.rb[2:1]   | passed | 0.12797 seconds |
-./spec/models/user_spec.rb[2:2]   | passed | 0.58636 seconds |
+example_id                              | status | run_time        |
+--------------------------------------- | ------ | --------------- |
+./spec/models/Friendship_spec.rb[1:1:1] | passed | 0.00777 seconds |
+./spec/models/Friendship_spec.rb[1:1:2] | passed | 0.00976 seconds |
+./spec/models/Friendship_spec.rb[1:2:1] | passed | 0.09266 seconds |
+./spec/models/user_spec.rb[1:1:1]       | passed | 0.0058 seconds  |
+./spec/models/user_spec.rb[1:1:2]       | passed | 0.00411 seconds |
+./spec/models/user_spec.rb[2:1]         | passed | 0.34248 seconds |
+./spec/models/user_spec.rb[2:2]         | passed | 0.06722 seconds |
