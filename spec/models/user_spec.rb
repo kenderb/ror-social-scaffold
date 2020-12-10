@@ -21,10 +21,10 @@ RSpec.describe User, type: :feature do
   end
   scenario 'User Sign in successfully' do
     user1.save
-    visit new_user_registration_path
+    visit root_path
     fill_in 'Email', with: user1.email
     fill_in 'Password', with: user1.password
     click_on 'Log in'
-    expect(page).to have_content('Save')
+    expect(page).to have_content('Signed in successfully.')
   end
 end
