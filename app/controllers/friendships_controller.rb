@@ -16,6 +16,7 @@ class FriendshipsController < ApplicationController
 
   def update
     friend = User.find(@friendship.user_id)
+    @friendship.update_attributes(confirmed: true)
     current_user.confirm_friend(friend)
     redirect_to friendships_path
   end

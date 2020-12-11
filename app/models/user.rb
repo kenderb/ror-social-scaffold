@@ -27,16 +27,7 @@ class User < ApplicationRecord
   end
 
   def confirm_friend(user)
-    check_invitation(self, user)
-    check_invitation(user, self)
-  end
-
-  def check_invitation(self_user, friend)
-    received_invitation = self_user.pending_friendships.where(user_id: friend.id).first
-    return if received_invitation.nil?
-
-    received_invitation.confirmed = true
-    received_invitation.save if received_invitation.valid?
+    Friendship.create!(user_id: id, friend_id: user.id, confirmed: true)
   end
 
   def friend?(user)
