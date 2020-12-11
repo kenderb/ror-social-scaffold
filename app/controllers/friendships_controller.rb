@@ -20,12 +20,12 @@ class FriendshipsController < ApplicationController
     current_user.confirm_friend(friend)
     redirect_to friendships_path
   end
-  
+
 
   def destroy
     @friendship.destroy
     redirect_to friendships_path
-  end  
+  end
 
   private
 

@@ -1,10 +1,11 @@
-example_id                              | status | run_time        |
---------------------------------------- | ------ | --------------- |
-./spec/models/Friendship_spec.rb[1:1:1] | passed | 0.01105 seconds |
-./spec/models/Friendship_spec.rb[1:1:2] | passed | 0.0412 seconds  |
-./spec/models/Friendship_spec.rb[1:2:1] | passed | 0.02465 seconds |
-./spec/models/Friendship_spec.rb[2:1]   | failed | 0.66652 seconds |
-./spec/models/user_spec.rb[1:1:1]       | passed | 0.00754 seconds |
-./spec/models/user_spec.rb[1:1:2]       | passed | 0.12254 seconds |
-./spec/models/user_spec.rb[2:1]         | passed | 0.0869 seconds  |
-./spec/models/user_spec.rb[2:2]         | passed | 0.06324 seconds |
+example_id                                             | status | run_time        |
+------------------------------------------------------ | ------ | --------------- |
+./spec/integration/friendship_integration_spec.rb[1:1] | passed | 0.14384 seconds |
+./spec/integration/friendship_integration_spec.rb[1:2] | passed | 0.21375 seconds |
+./spec/integration/user_integration_spec.rb[1:1]       | passed | 0.07994 seconds |
+./spec/integration/user_integration_spec.rb[1:2]       | passed | 0.34468 seconds |
+./spec/models/Friendship_spec.rb[1:1:1]                | passed | 0.02243 seconds |
+./spec/models/Friendship_spec.rb[1:1:2]                | passed | 0.00982 seconds |
+./spec/models/Friendship_spec.rb[1:2:1]                | passed | 0.0153 seconds  |
+./spec/models/user_spec.rb[1:1:1]                      | passed | 0.10122 seconds |
+./spec/models/user_spec.rb[1:1:2]                      | passed | 0.00516 seconds |
