@@ -328,6 +328,15 @@ form {
     color: #f00;
   }
 }
+.friends_request_numbers {
+  font-size: .8rem;
+  top: 0;
+  z-index: 2;
+  position: absolute;
+  border-radius: 50%;
+  display: inline;
+  padding-inline: 0.4rem;
+}
 
 @media only screen and (min-width: 480px) {
   form {
