@@ -7,11 +7,6 @@
 ![screenshot](./docs/Diagram_social_media_image.PNG)
 
 
-## Built With
-
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
-
 ## Live Demo
 
 TBA
@@ -23,17 +18,20 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
+Ruby: 2.7.0
 Rails: 5.2.3
 Postgres: >=9.5
 
-### Setup
+## 📝 Setup
 
-Instal gems with:
-
-```
-bundle install
-```
+1. Open the terminal.
+2. On the terminal navigate to the project directory using `cd ror-social-scaffold /`.
+3. Install dependencies using: `bundle install`.
+3. If it required: `bundle update`.
+4. Migrate the database: `rails db:migrate`.
+5. If required run: `yarn install`, and repeate the step 4.
+6. Start the application : `rails server`.
+7. To Stop the application : Create a user.
 
 Setup database with:
 
@@ -76,7 +74,18 @@ TBA
 
 ## Authors
 
-TBA
+👤 **Kender Bolivar**
+
+- GitHub: [@kenderb](https://github.com/ken)
+- Twitter: [@twitterhandle](https://twitter.com/KBTarts )
+- LinkedIn: [KenderBolivar](https://www.linkedin.com/in/kender-bolivar-1736086b/ )
+
+
+👤 **Kenvin Cotrina**
+
+- GitHub: [kcotrinam](https://github.com/kcotrinam) 
+- Twitter: [@kcotrinam_dev](https://twitter.com/kcotrinam_dev)
+- LinkedIn: [KevinCotrina](https://www.linkedin.com/in/kevincotrina/ )
 
 ## 🤝 Contributing
 
@@ -88,11 +97,13 @@ Feel free to check the [issues page](issues/).
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
+## :grey_exclamation: Acknowledgments
 
-TBA
+- [Rails Guides](https://guides.rubyonrails.org/)
+- [Shoulda Matchers](https://matchers.shoulda.io/docs/v4.4.1/index.html)
+- Stack Overflow
+- Odin Project.
 
 ## 📝 License
 
 TBA
-
