@@ -21,6 +21,6 @@ module ApplicationHelper
   #   link_to 'Add Friend',
   #           friendships_path(friendship: { user_id: current_user, friend_id: user.id, confirmed: false }),
   #           method: :post, class: 'add-friend '
-    
+
   # end
 end
