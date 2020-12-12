@@ -10,23 +10,12 @@ class User < ApplicationRecord
 
   has_many :friendships
 
-  has_many :pending_friendships, -> { where confirmed: false }, class_name: 'Friendship', foreign_key: 'friend_id'
+  has_many :pending_friendships, -> { where confirmed: false }, class_name: 'Friendship', foreign_key: 'user_id'
   has_many :confirmed_friendships, -> { where confirmed: true }, class_name: 'Friendship'
   has_many :friends, through: :confirmed_friendships
-
-  # def friends
-  #   friends_array = friendships.map { |friendship| friendship.friend if friendship.confirmed }
-  #   friends_array << pending_friendships.map { |friendship| friendship.user if friendship.confirmed }
-  #   friends_array.compact
-  # end
-
-  def pending_friends
-    friendships.map { |friendship| friendship.friend unless friendship.confirmed }.compact
-  end
-
-  def friend_requests
-    pending_friendships.map { |friendship| friendship.user unless friendship.confirmed }.compact.uniq
-  end
+  has_many :pending_friends, through: :pending_friendships, source: :friend
+  has_many :inverted_friendships, -> { where confirmed: false }, class_name: "Friendship", foreign_key: "friend_id"
+  has_many :friend_requests, through: :inverted_friendships
 
   def confirm_friend(user)
     Friendship.create!(user_id: id, friend_id: user.id, confirmed: true)
@@ -35,4 +24,9 @@ class User < ApplicationRecord
   def friend?(user)
     friends.include?(user)
   end
+
+  # def friends_and_own_posts
+  #   Post.where(user: (self.friends << self))
+  # end
+
 end
