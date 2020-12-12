@@ -1,0 +1,16 @@
+<div class="navbar-item has-dropdown is-hoverable mr-3">
+  <%= render 'layouts/friend_request_number' %>
+  <a class="navbar-link has-text-info">
+    <%= current_user.name %>
+  </a>
+  <div class="navbar-dropdown">
+    <%= link_to 'See Profile',  user_path(current_user), class: 'navbar-item' %>
+    <hr class="navbar-divider">
+    <div class="navbar-item">
+      <%= render 'layouts/friend_request_number' %>
+      <%= link_to 'friend requests', friendships_path , class: 'mt-3' %> 
+    </div>
+    <hr class="navbar-divider">
+    <%= link_to 'Sign out', destroy_user_session_path, class: 'navbar-item', method: :delete %>
+  </div>
+</div>

@@ -1,5 +1,4 @@
 
-<%#if (current_user.friend?(post.user) || post.user.friend?(current_user)) || current_user == post.user%>
 <% current_user.friends_and_own_posts.each do |post| %>
   <li class="post">
     <div>
@@ -24,7 +23,4 @@
       <% end %>
     </div>
   </li>
-<%# end %>
-
-  
 <% end %>

@@ -23,4 +23,24 @@ module ApplicationHelper
             friendships_path(friendship: { user_id: current_user, friend_id: user.id, confirmed: false }),
             method: :post, class: 'add-friend '
   end
+
+  def user_menu
+    if user_signed_in?
+      render '/layouts/dropdown_menu'
+    else
+      render '/layouts/sesion_buttons'
+    end 
+  end
+
+  def display_alert
+    if notice.present? 
+      render '/layouts/notice'
+    elsif alert.present? 
+      render '/layouts/alert'
+    end
+  end
+  
+  def counter
+    current_user.inverted_friendships.length if current_user.inverted_friendships.length > 0
+  end
 end
