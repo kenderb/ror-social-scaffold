@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap");
 
-$primary-color-dark: #689f38;
-$primary-color: #8bc34a;
-$primary-color-light: #dcedc8;
+$primary-color-dark: hsl(204, 86%, 53%);
+$primary-color: hsl(217, 71%, 53%);
+$primary-color-light: hsl(217, 10%, 90%);
 $primary-color-text: #212121;
 $divider-color: #bdbdbd;
 
@@ -157,7 +157,7 @@ form {
     }
 
     input[type="checkbox"] {
-      width: fit-content;
+      width: auto;
     }
   }
 
@@ -318,6 +318,7 @@ form {
   color: white;
   margin: 2rem;
 }
+
 #error_explanation {
   h2 {
     color: $primary-color-text;
@@ -327,6 +328,21 @@ form {
   ul {
     color: #f00;
   }
+}
+
+.friends_request_numbers {
+  font-size: 0.8rem;
+  top: 0;
+  z-index: 2;
+  position: absolute;
+  border-radius: 50%;
+  display: inline;
+  padding-inline: 0.4rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media only screen and (min-width: 480px) {

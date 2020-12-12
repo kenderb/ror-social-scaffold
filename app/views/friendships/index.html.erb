@@ -1,6 +1,14 @@
-<h1> friend requests</h1>
-<% current_user.pending_friendships.each do |request| %>
-  <%= User.find(request.user_id).name%><br />
-  <%= link_to 'Accept', friendship_path(request), method: :patch %> |
-  <%= link_to 'Decline', friendship_path(request), method: :delete %>
+<h1 class="title"> friend requests</h1>
+<% current_user.inverted_friendships.each do |request| %>
+<div class="card mt-5 p-4">
+  <div  class= 'card-header'>
+    <p class="subtitle mx-auto">
+    <%= User.find(request.user_id).name %><br />
+    <p>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Accept', friendship_path(request), class: 'button is-success footer-item', method: :patch %> 
+    <%= link_to 'Decline', friendship_path(request), class: 'button is-danger footer-item ml-3', method: :delete %>
+  </div>
+  </div>
 <% end %>

@@ -7,38 +7,25 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+
   has_many :friendships
 
-  has_many :pending_friendships, -> { where confirmed: false }, class_name: 'Friendship', foreign_key: 'friend_id'
-
-  def friends
-    friends_array = friendships.map { |friendship| friendship.friend if friendship.confirmed }
-    friends_array << pending_friendships.map { |friendship| friendship.user if friendship.confirmed }
-    friends_array.compact
-  end
-
-  def pending_friends
-    friendships.map { |friendship| friendship.friend unless friendship.confirmed }.compact
-  end
-
-  def friend_requests
-    pending_friendships.map { |friendship| friendship.user unless friendship.confirmed }.compact.uniq
-  end
+  has_many :pending_friendships, -> { where confirmed: false }, class_name: 'Friendship', foreign_key: 'user_id'
+  has_many :confirmed_friendships, -> { where confirmed: true }, class_name: 'Friendship'
+  has_many :friends, through: :confirmed_friendships
+  has_many :pending_friends, through: :pending_friendships, source: :friend
+  has_many :inverted_friendships, -> { where confirmed: false }, class_name: 'Friendship', foreign_key: 'friend_id'
+  has_many :friend_requests, through: :inverted_friendships
 
   def confirm_friend(user)
-    check_invitation(self, user)
-    check_invitation(user, self)
-  end
-
-  def check_invitation(self_user, friend)
-    received_invitation = self_user.pending_friendships.where(user_id: friend.id).first
-    return if received_invitation.nil?
-
-    received_invitation.confirmed = true
-    received_invitation.save if received_invitation.valid?
+    Friendship.create!(user_id: id, friend_id: user.id, confirmed: true)
   end
 
   def friend?(user)
     friends.include?(user)
+  end
+
+  def friends_and_own_posts
+    Post.where(user: friends.push(self))
   end
 end

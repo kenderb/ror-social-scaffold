@@ -30,7 +30,7 @@ RSpec.describe Friendship, type: :feature do
     fill_in 'Email', with: user2.email
     fill_in 'Password', with: user2.password
     click_on 'Log in'
-    click_on 'my friend requests'
+    click_on 'friend requests'
     expect(page).to have_content('Accept')
   end
 end
