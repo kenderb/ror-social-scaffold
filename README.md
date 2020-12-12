@@ -78,4 +78,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-TBA
+[LICENSE](LICENSE)
