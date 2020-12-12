@@ -29,18 +29,18 @@ module ApplicationHelper
       render '/layouts/dropdown_menu'
     else
       render '/layouts/sesion_buttons'
-    end 
+    end
   end
 
   def display_alert
-    if notice.present? 
+    if notice.present?
       render '/layouts/notice'
-    elsif alert.present? 
+    elsif alert.present?
       render '/layouts/alert'
     end
   end
-  
+
   def counter
-    current_user.inverted_friendships.length if current_user.inverted_friendships.length > 0
+    current_user.inverted_friendships.length if current_user.inverted_friendships.length.positive?
   end
 end

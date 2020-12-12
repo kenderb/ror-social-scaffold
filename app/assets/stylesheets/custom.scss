@@ -157,7 +157,7 @@ form {
     }
 
     input[type="checkbox"] {
-      width: fit-content;
+      width: auto;
     }
   }
 
@@ -318,6 +318,7 @@ form {
   color: white;
   margin: 2rem;
 }
+
 #error_explanation {
   h2 {
     color: $primary-color-text;
@@ -328,8 +329,9 @@ form {
     color: #f00;
   }
 }
+
 .friends_request_numbers {
-  font-size: .8rem;
+  font-size: 0.8rem;
   top: 0;
   z-index: 2;
   position: absolute;
