@@ -1,26 +1,29 @@
-# Scaffold for social media app with Ruby on Rails
+# Social media app with Ruby on Rails
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> This Project is based on a social network. It is focused on send friend requests to other users. The app also allows the user to see his own posts and see the urser's friends posts.
 
 ## Diagram for the App
 
 ![screenshot](./docs/Diagram_social_media_image.PNG)
 
+## Demo Screenshots
+
+![screenshot](./docs/screenshot.png)
+![screenshot](./docs/screenshot2.png)
 
 ## Live Demo
 
-TBA
+[Live version](https://sm-friends.herokuapp.com/users)
 
-
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
+## Prerequisites
 
 Ruby: 2.7.0
 Rails: 5.2.3
 Postgres: >=9.5
+
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
 
 ## 📝 Setup
 
@@ -30,47 +33,16 @@ Postgres: >=9.5
 3. If it required: `bundle update`.
 4. Migrate the database: `rails db:migrate`.
 5. If required run: `yarn install`, and repeate the step 4.
-6. Start the application : `rails server`.
-7. To Stop the application : Create a user.
+6. Run rails `db:create`
+7. rails `db:migrate`
+8. Start the application : `rails server`.
+9. Open `http://localhost:3000/` in your browser.
+10. To Stop the application : Create a user.
 
-Setup database with:
+## Run tests
 
-```
-   rails db:create
-   rails db:migrate
-```
-
-### Github Actions
-
-To make sure the linters' checks using Github Actions work properly, you should follow the next steps:
-
-1. On your recently forked repo, enable the GitHub Actions in the Actions tab.
-2. Create the `feature/branch` and push.
-3. Start working on your milestone as usual.
-4. Open a PR from the `feature/branch` when your work is done.
-
-
-### Usage
-
-Start server with:
-
-```
-    rails server
-```
-
-Open `http://localhost:3000/` in your browser.
-
-### Run tests
-
-```
-    rpsec --format documentation
-```
-
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
-
-### Deployment
-
-TBA
+- Open the terminal
+- Run `rpsec --format documentation`
 
 ## Authors
 
@@ -106,4 +78,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-TBA
+[LICENSE](LICENSE)
